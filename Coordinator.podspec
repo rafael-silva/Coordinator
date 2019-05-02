@@ -10,7 +10,8 @@ Pod::Spec.new do |s|
   s.author           = { 'rafael-silva' => 'rafael.matos@involves.com.br' }
   s.source           = { :git => 'https://github.com/rafael-silva/Coordinator.git', :tag => s.version.to_s }
 
-  s.ios.deployment_target = '8.0'
+  s.ios.deployment_target = '10.0'
+  s.swift_version = '4,2'
 
   s.source_files = 'Coordinator/Classes/**/*'
 end
