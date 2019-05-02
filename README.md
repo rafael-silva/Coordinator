@@ -53,26 +53,27 @@ protocol CoordinatorFactory {
 ```
 AppDelegate store lazy reference for the Application Coordinator
 ```swift
-var rootController: UINavigationController {
-    return self.window!.rootViewController as! UINavigationController
-  }
-  
-  private lazy var applicationCoordinator: Coordinator = self.makeCoordinator()
-  
-  func application(_ application: UIApplication,
-                   didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-    let notification = launchOptions?[.remoteNotification] as? [String: AnyObject]
-    let deepLink = DeepLinkOption.build(with: notification)
-    applicationCoordinator.start(with: deepLink)
-    return true
-  }
-  
-  private func makeCoordinator() -> Coordinator {
-      return ApplicationCoordinator(
-        router: RouterImp(rootController: self.rootController),
-        coordinatorFactory: CoordinatorFactoryImp()
-      )
-  }
+    var rootController: UINavigationController {
+        self.window = UIWindow(frame: UIScreen.main.bounds)
+        self.window?.makeKeyAndVisible()
+        window?.rootViewController = custonNavigationController
+        
+        return self.window!.rootViewController as! UINavigationController
+    }
+    
+    private lazy var appCoordinator: Coordinator = self.makeCoordinator()
+
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        appCoordinator.start()
+        return true
+    }
+    
+    private func makeCoordinator() -> Coordinator {
+        return AppCoordinator(
+            router: RouterImp(rootController: rootController),
+            coordinatorFactory: CoordinatorFactoryImp()
+        )
+    }
 ```
 
 ## Author
