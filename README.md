@@ -20,6 +20,61 @@ it, simply add the following line to your Podfile:
 pod 'Coordinator'
 ```
 
+I used a protocol for coordinators in this example:
+```swift
+protocol Coordinator:class {
+    func start()
+}
+```
+The base coordinator stores dependencies of child coordinators
+```swift
+class BaseCoordinator: Coordinator {
+    
+    var childCoordinators: [Coordinator] = []
+    
+    func start() {}
+    
+    func addChildCoordinator(_ childCoordinator: Coordinator) {
+        self.childCoordinators.append(childCoordinator)
+    }
+    
+    func removeChildCoordinator(_ childCoordinator: Coordinator) {
+        self.childCoordinators = self.childCoordinators.filter { $0 !== childCoordinator}
+    }
+    
+}
+```
+In this example I use factories for creating  coordinators and controllers (we can mock them in tests).
+```swift
+protocol CoordinatorFactory {
+    func makeMoviesUpcomingCoordinator(router: Router) -> Coordinator
+}
+
+```
+AppDelegate store lazy reference for the Application Coordinator
+```swift
+var rootController: UINavigationController {
+    return self.window!.rootViewController as! UINavigationController
+  }
+  
+  private lazy var applicationCoordinator: Coordinator = self.makeCoordinator()
+  
+  func application(_ application: UIApplication,
+                   didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+    let notification = launchOptions?[.remoteNotification] as? [String: AnyObject]
+    let deepLink = DeepLinkOption.build(with: notification)
+    applicationCoordinator.start(with: deepLink)
+    return true
+  }
+  
+  private func makeCoordinator() -> Coordinator {
+      return ApplicationCoordinator(
+        router: RouterImp(rootController: self.rootController),
+        coordinatorFactory: CoordinatorFactoryImp()
+      )
+  }
+```
+
 ## Author
 
 rafael-silva, rafael.matos@involves.com.br
