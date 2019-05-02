@@ -7,17 +7,7 @@ target 'Coordinator_Example' do
   target 'Coordinator_Tests' do
     inherit! :search_paths
 
-    pod 'Nimble', '7.3.4'
-    pod 'Quick', '2.0.0'
+    pod 'Nimble'
+    pod 'Quick'
   end
 end
-
-# Disable Code Coverage for Pods projects except MyPod
-post_install do |installer_representation|
-  installer_representation.pods_project.targets.each do |target|
-    target.build_configurations.each do |config|
-      config.build_settings['SWIFT_VERSION'] = '4.2'
-    end
-  end
-end
-

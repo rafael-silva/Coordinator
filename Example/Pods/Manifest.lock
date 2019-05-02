@@ -1,12 +1,12 @@
 PODS:
   - Coordinator (0.1.0)
-  - Nimble (7.3.4)
-  - Quick (2.0.0)
+  - Nimble (8.0.1)
+  - Quick (2.1.0)
 
 DEPENDENCIES:
   - Coordinator (from `../`)
-  - Nimble (= 7.3.4)
-  - Quick (= 2.0.0)
+  - Nimble
+  - Quick
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -18,10 +18,10 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  Coordinator: 34196ba6fe2139a04ba3bcad6c2e2df254c1687b
-  Nimble: 051e3d8912d40138fa5591c78594f95fb172af37
-  Quick: ce1276c7c27ba2da3cb2fd0cde053c3648b3b22d
+  Coordinator: ce1a6504d45cc52460a9cd9dea788934396a6e8b
+  Nimble: 45f786ae66faa9a709624227fae502db55a8bdd0
+  Quick: 4be43f6634acfa727dd106bdf3929ce125ffa79d
 
-PODFILE CHECKSUM: 6e69ebabca09d3743ec39cfffa056988535593e3
+PODFILE CHECKSUM: c3e06e3ecc9dafa7e526b18b14a7d0e486c81b89
 
 COCOAPODS: 1.6.1
