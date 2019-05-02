@@ -49,7 +49,29 @@ In this example I use factories for creating  coordinators and controllers (we c
 protocol CoordinatorFactory {
     func makeMoviesUpcomingCoordinator(router: Router) -> Coordinator
 }
-
+```
+This will simplify the AppDelegate by removing all business logic
+```swift
+class AppCoordinator: BaseCoordinator {
+    
+    private let coordinatorFactory: CoordinatorFactory
+    private let router: Router
+    
+    init(router: Router, coordinatorFactory: CoordinatorFactory) {
+        self.router = router
+        self.coordinatorFactory = coordinatorFactory
+    }
+    
+    override func start() {
+        runComicsFlow()
+    }
+    
+    private func runComicsFlow() {
+        let coordinator = coordinatorFactory.makeMoviesUpcomingCoordinator(router: router)
+        self.addChildCoordinator(coordinator)
+        coordinator.start()
+    }
+}
 ```
 AppDelegate store lazy reference for the Application Coordinator
 ```swift
