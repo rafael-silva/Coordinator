@@ -44,7 +44,7 @@ class BaseCoordinator: Coordinator {
     
 }
 ```
-In this example I use factories for creating  coordinators and controllers (we can mock them in tests).
+In this example I use factories for creating  coordinators and controllers.
 ```swift
 protocol CoordinatorFactory {
     func makeMoviesUpcomingCoordinator(router: Router) -> Coordinator
