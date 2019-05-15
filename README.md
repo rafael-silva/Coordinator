@@ -63,10 +63,10 @@ class AppCoordinator: BaseCoordinator {
     }
     
     override func start() {
-        runComicsFlow()
+        runMoviesFlow()
     }
     
-    private func runComicsFlow() {
+    private func runMoviesFlow() {
         let coordinator = coordinatorFactory.makeMoviesUpcomingCoordinator(router: router)
         self.addChildCoordinator(coordinator)
         coordinator.start()
