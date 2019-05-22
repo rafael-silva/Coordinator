@@ -14,4 +14,5 @@ Pod::Spec.new do |s|
   s.swift_version = '5'
 
   s.source_files = 'Coordinator/Classes/**/*'
+  s.dependency 'Timeline', '0.1.1'
 end

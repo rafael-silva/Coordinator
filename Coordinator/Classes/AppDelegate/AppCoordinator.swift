@@ -1,15 +1,19 @@
 import UIKit
-import Foundation
+import Timeline
 
-class AppCoordinator: BaseCoordinator {
+public class AppCoordinator: BaseCoordinator {
     
     private let coordinatorFactory: CoordinatorFactory
     private let router: Router
     
-    init(router: Router, coordinatorFactory: CoordinatorFactory) {
+    public init(router: Router, coordinatorFactory: CoordinatorFactory) {
         self.router = router
         self.coordinatorFactory = coordinatorFactory
     }
     
-    override func start() {}
+    override public func start() {
+        let coordinator = coordinatorFactory.makeTimelineCoordinator(router: router)
+        self.addChildCoordinator(coordinator)
+        coordinator.start()
+    }
 }   

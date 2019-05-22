@@ -1,3 +1,3 @@
-protocol Coordinator: class {
+public protocol Coordinator: class {
     func start()
 }
