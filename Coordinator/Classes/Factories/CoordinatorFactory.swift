@@ -1,3 +1,3 @@
 protocol CoordinatorFactory {
-    func makeStartCoordinator(router: Router) -> Coordinator
+    func makeTimelineCoordinator(router: Router) -> Coordinator
 }

@@ -1,12 +1,14 @@
+source 'https://github.com/giovanepossebon/gio-specs.git'
+
 platform :ios, '10.0'
 use_frameworks!
 
 target 'Coordinator_Example' do
   pod 'Coordinator', :path => '../'
-
+  pod 'Timeline', '0.1.1'
+  
   target 'Coordinator_Tests' do
     inherit! :search_paths
-
     pod 'Nimble'
     pod 'Quick'
   end
