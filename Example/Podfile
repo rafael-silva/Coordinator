@@ -7,7 +7,7 @@ use_frameworks!
 
 target 'Coordinator_Example' do
   pod 'Coordinator', :path => '../'
-  pod 'Timeline', '0.1.1'
+  pod 'Timeline', '0.1.2'
   
   target 'Coordinator_Tests' do
     inherit! :search_paths

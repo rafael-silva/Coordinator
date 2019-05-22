@@ -1,6 +1,6 @@
 PODS:
-  - Coordinator (0.1.1):
-    - Timeline (= 0.1.1)
+  - Coordinator (0.1.2):
+    - Timeline (= 0.1.2)
   - DataProvider (0.1.1):
     - RealmSwift
   - Nimble (8.0.1)
@@ -10,14 +10,14 @@ PODS:
   - Realm/Headers (3.15.0)
   - RealmSwift (3.15.0):
     - Realm (= 3.15.0)
-  - Timeline (0.1.1):
+  - Timeline (0.1.2):
     - DataProvider (= 0.1.1)
 
 DEPENDENCIES:
   - Coordinator (from `../`)
   - Nimble
   - Quick
-  - Timeline (= 0.1.1)
+  - Timeline (= 0.1.2)
 
 SPEC REPOS:
   "git@github.com:giovanepossebon/gio-specs.git":
@@ -34,14 +34,14 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  Coordinator: 582a7bd35b0db849e95398b412233706d5c05b92
+  Coordinator: e246c6b397ab3445d6c9e239a3bf32c9f52e3e30
   DataProvider: 2a738eab0f4e86a468df8273ec108dca00badf98
   Nimble: 45f786ae66faa9a709624227fae502db55a8bdd0
   Quick: 4be43f6634acfa727dd106bdf3929ce125ffa79d
   Realm: 9b834e1be6062f544805252c812348872dc5d4ed
   RealmSwift: 8a41886f8ab6efef9eb8df97de2f2bb911561a79
-  Timeline: ea28b7fdff985b90632fe23f2405776559001ffd
+  Timeline: 2c5da39bbd68ba9df93bb663243642139a28e96d
 
-PODFILE CHECKSUM: ef7a8929d3c02a49f4451b90bf47cd2672cd831f
+PODFILE CHECKSUM: 54776e64a11e9e0562976ac0498443df7ea45ee1
 
 COCOAPODS: 1.6.1
