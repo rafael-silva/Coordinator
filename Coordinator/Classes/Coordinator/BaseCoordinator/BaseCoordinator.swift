@@ -1,8 +1,8 @@
-class BaseCoordinator: Coordinator {
+public class BaseCoordinator: Coordinator {
     
     var childCoordinators: [Coordinator] = []
     
-    func start() {}
+    public func start() {}
     
     func addChildCoordinator(_ childCoordinator: Coordinator) {
         self.childCoordinators.append(childCoordinator)
