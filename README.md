@@ -22,7 +22,7 @@ pod 'Coordinator'
 
 I used a protocol for coordinators in this example:
 ```swift
-protocol Coordinator:class {
+protocol Coordinator: class {
     func start()
 }
 ```
